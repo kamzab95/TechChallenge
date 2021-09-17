@@ -30,6 +30,7 @@ class TransactionListViewModel: ObservableObject {
     
     @Published var transactions: [TransactionModel]
     @Published var transactionFilter: TransactionFilter = TransactionFilter()
+    @Published var pinned: Set<TransactionModel.ID> = Set()
     
     private let sourceTransactions: [TransactionModel]
     

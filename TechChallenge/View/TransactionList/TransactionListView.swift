@@ -36,7 +36,7 @@ struct TransactionListView: View {
                     .background(Color.accentColor.opacity(0.8))
                 List {
                     ForEach(viewModel.transactions) { transaction in
-                        TransactionView(transaction: transaction)
+                        transactionView(transaction: transaction)
                     }
                     Spacer()
                         .frame(height: 80)
@@ -53,15 +53,27 @@ struct TransactionListView: View {
         }
     }
     
+    func transactionView(transaction: TransactionModel) -> TransactionView {
+        let viewModel = TransactionViewModel(
+            transaction: transaction,
+            pinned: viewModel.pinned.contains(transaction.id))
+        
+        viewModel.action = {
+            self.viewModel.pinned.insert(transaction.id)
+        }
+        
+        return TransactionView(viewModel: viewModel)
+    }
+    
     func floatingView() -> FloatingSumView {
         let totalSpent: Double = self.viewModel.transactions
             .map({ $0.amount})
             .reduce(0, +)
-        
+
         let floatingViewModel = FloatingSumViewModel(
             category: viewModel.transactionFilter.category.category,
             totalSpent: totalSpent)
-        
+
         return FloatingSumView(viewModel: floatingViewModel)
     }
 }
