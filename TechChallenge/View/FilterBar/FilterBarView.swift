@@ -26,6 +26,8 @@ struct FilterBarView<T: FilterCategory>: View {
                                     .fill(category.color)
                                 Text(category.name)
                                     .foregroundColor(Color.white)
+                                    .font(.title2)
+                                    .fontWeight(.bold)
                                     .lineLimit(1)
                                     .fixedSize()
                                     .padding([.leading, .trailing], 12)

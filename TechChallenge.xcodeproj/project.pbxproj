@@ -27,6 +27,7 @@
 		3CE226C726B2E41E00B3D085 /* InsightsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE226C626B2E41E00B3D085 /* InsightsView.swift */; };
 		8E829E5D26F50820000B48DD /* FilterBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E829E5B26F50820000B48DD /* FilterBarViewModel.swift */; };
 		8E829E5E26F50820000B48DD /* FilterBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E829E5C26F50820000B48DD /* FilterBarView.swift */; };
+		8E829E6026F50ABD000B48DD /* TransactionListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E829E5F26F50ABD000B48DD /* TransactionListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,7 @@
 		3CE226C626B2E41E00B3D085 /* InsightsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsightsView.swift; sourceTree = "<group>"; };
 		8E829E5B26F50820000B48DD /* FilterBarViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterBarViewModel.swift; sourceTree = "<group>"; };
 		8E829E5C26F50820000B48DD /* FilterBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterBarView.swift; sourceTree = "<group>"; };
+		8E829E5F26F50ABD000B48DD /* TransactionListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +139,7 @@
 			children = (
 				3CE226B826B0548C00B3D085 /* TransactionView.swift */,
 				3CE226B426B0523C00B3D085 /* TransactionListView.swift */,
+				8E829E5F26F50ABD000B48DD /* TransactionListViewModel.swift */,
 			);
 			path = TransactionList;
 			sourceTree = "<group>";
@@ -320,6 +323,7 @@
 				3CE226BF26B05EB100B3D085 /* ViewModifiers.swift in Sources */,
 				3C296ECF26B31193006DF667 /* Angle.swift in Sources */,
 				3C3FCAAD26C57A7D0092AB11 /* TransactionModel+UI.swift in Sources */,
+				8E829E6026F50ABD000B48DD /* TransactionListViewModel.swift in Sources */,
 				3CE226B526B0523C00B3D085 /* TransactionListView.swift in Sources */,
 				3CE226B126B03DC600B3D085 /* ModelData.swift in Sources */,
 				3CE2268426B007D200B3D085 /* TechChallengeApp.swift in Sources */,
