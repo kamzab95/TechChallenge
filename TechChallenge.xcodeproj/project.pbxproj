@@ -28,6 +28,7 @@
 		8E829E5D26F50820000B48DD /* FilterBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E829E5B26F50820000B48DD /* FilterBarViewModel.swift */; };
 		8E829E5E26F50820000B48DD /* FilterBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E829E5C26F50820000B48DD /* FilterBarView.swift */; };
 		8E829E6026F50ABD000B48DD /* TransactionListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E829E5F26F50ABD000B48DD /* TransactionListViewModel.swift */; };
+		8E829E6626F50C2C000B48DD /* FilterBarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E829E6526F50C2C000B48DD /* FilterBarTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,7 @@
 		8E829E5B26F50820000B48DD /* FilterBarViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterBarViewModel.swift; sourceTree = "<group>"; };
 		8E829E5C26F50820000B48DD /* FilterBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterBarView.swift; sourceTree = "<group>"; };
 		8E829E5F26F50ABD000B48DD /* TransactionListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListViewModel.swift; sourceTree = "<group>"; };
+		8E829E6526F50C2C000B48DD /* FilterBarTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterBarTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 		3C296EDA26B4402A006DF667 /* TechChallengeTests */ = {
 			isa = PBXGroup;
 			children = (
+				8E829E6426F50BF7000B48DD /* FilterBar */,
 				3C296F0D26B455F1006DF667 /* TechChallengeTests.swift */,
 				3C296EDD26B4402A006DF667 /* Info.plist */,
 			);
@@ -205,6 +208,14 @@
 			path = FilterBar;
 			sourceTree = "<group>";
 		};
+		8E829E6426F50BF7000B48DD /* FilterBar */ = {
+			isa = PBXGroup;
+			children = (
+				8E829E6526F50C2C000B48DD /* FilterBarTests.swift */,
+			);
+			path = FilterBar;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -306,6 +317,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3C296F0E26B455F1006DF667 /* TechChallengeTests.swift in Sources */,
+				8E829E6626F50C2C000B48DD /* FilterBarTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
