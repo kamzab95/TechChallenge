@@ -25,6 +25,8 @@
 		3CE226BF26B05EB100B3D085 /* ViewModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE226BE26B05EB100B3D085 /* ViewModifiers.swift */; };
 		3CE226C126B062BA00B3D085 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE226C026B062BA00B3D085 /* Double.swift */; };
 		3CE226C726B2E41E00B3D085 /* InsightsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE226C626B2E41E00B3D085 /* InsightsView.swift */; };
+		8E829E5D26F50820000B48DD /* FilterBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E829E5B26F50820000B48DD /* FilterBarViewModel.swift */; };
+		8E829E5E26F50820000B48DD /* FilterBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E829E5C26F50820000B48DD /* FilterBarView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +62,8 @@
 		3CE226BE26B05EB100B3D085 /* ViewModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModifiers.swift; sourceTree = "<group>"; };
 		3CE226C026B062BA00B3D085 /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
 		3CE226C626B2E41E00B3D085 /* InsightsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsightsView.swift; sourceTree = "<group>"; };
+		8E829E5B26F50820000B48DD /* FilterBarViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterBarViewModel.swift; sourceTree = "<group>"; };
+		8E829E5C26F50820000B48DD /* FilterBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterBarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				3CE2268326B007D200B3D085 /* TechChallengeApp.swift */,
+				8E829E5A26F50820000B48DD /* FilterBar */,
 				3CE226CB26B2E44E00B3D085 /* Insights */,
 				3CE226C826B2E42800B3D085 /* TransactionList */,
 				3CE226CC26B2E47300B3D085 /* Shared */,
@@ -186,6 +191,15 @@
 				3C296ED026B404A5006DF667 /* Path.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		8E829E5A26F50820000B48DD /* FilterBar */ = {
+			isa = PBXGroup;
+			children = (
+				8E829E5B26F50820000B48DD /* FilterBarViewModel.swift */,
+				8E829E5C26F50820000B48DD /* FilterBarView.swift */,
+			);
+			path = FilterBar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -300,6 +314,7 @@
 				3CE226C126B062BA00B3D085 /* Double.swift in Sources */,
 				3CE226AF26B03CBA00B3D085 /* TransactionModel.swift in Sources */,
 				3CE01C6426B2EBDE0091B7BA /* Color.swift in Sources */,
+				8E829E5E26F50820000B48DD /* FilterBarView.swift in Sources */,
 				3CE226BB26B0573C00B3D085 /* Date.swift in Sources */,
 				3CE226C726B2E41E00B3D085 /* InsightsView.swift in Sources */,
 				3CE226BF26B05EB100B3D085 /* ViewModifiers.swift in Sources */,
@@ -310,6 +325,7 @@
 				3CE2268426B007D200B3D085 /* TechChallengeApp.swift in Sources */,
 				3C296ED126B404A5006DF667 /* Path.swift in Sources */,
 				3CE226B926B0548C00B3D085 /* TransactionView.swift in Sources */,
+				8E829E5D26F50820000B48DD /* FilterBarViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
