@@ -29,6 +29,7 @@
 		8E829E5E26F50820000B48DD /* FilterBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E829E5C26F50820000B48DD /* FilterBarView.swift */; };
 		8E829E6026F50ABD000B48DD /* TransactionListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E829E5F26F50ABD000B48DD /* TransactionListViewModel.swift */; };
 		8E829E6626F50C2C000B48DD /* FilterBarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E829E6526F50C2C000B48DD /* FilterBarTests.swift */; };
+		8E829E6926F51302000B48DD /* FloatingSumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E829E6826F51302000B48DD /* FloatingSumView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,7 @@
 		8E829E5C26F50820000B48DD /* FilterBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterBarView.swift; sourceTree = "<group>"; };
 		8E829E5F26F50ABD000B48DD /* TransactionListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListViewModel.swift; sourceTree = "<group>"; };
 		8E829E6526F50C2C000B48DD /* FilterBarTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterBarTests.swift; sourceTree = "<group>"; };
+		8E829E6826F51302000B48DD /* FloatingSumView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingSumView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +152,7 @@
 		3CE226C926B2E43000B3D085 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				8E829E6726F512E9000B48DD /* FloatingSumView */,
 				3CE2268326B007D200B3D085 /* TechChallengeApp.swift */,
 				8E829E5A26F50820000B48DD /* FilterBar */,
 				3CE226CB26B2E44E00B3D085 /* Insights */,
@@ -214,6 +217,14 @@
 				8E829E6526F50C2C000B48DD /* FilterBarTests.swift */,
 			);
 			path = FilterBar;
+			sourceTree = "<group>";
+		};
+		8E829E6726F512E9000B48DD /* FloatingSumView */ = {
+			isa = PBXGroup;
+			children = (
+				8E829E6826F51302000B48DD /* FloatingSumView.swift */,
+			);
+			path = FloatingSumView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -333,6 +344,7 @@
 				3CE226BB26B0573C00B3D085 /* Date.swift in Sources */,
 				3CE226C726B2E41E00B3D085 /* InsightsView.swift in Sources */,
 				3CE226BF26B05EB100B3D085 /* ViewModifiers.swift in Sources */,
+				8E829E6926F51302000B48DD /* FloatingSumView.swift in Sources */,
 				3C296ECF26B31193006DF667 /* Angle.swift in Sources */,
 				3C3FCAAD26C57A7D0092AB11 /* TransactionModel+UI.swift in Sources */,
 				8E829E6026F50ABD000B48DD /* TransactionListViewModel.swift in Sources */,

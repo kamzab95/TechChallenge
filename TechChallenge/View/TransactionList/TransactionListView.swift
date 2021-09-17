@@ -29,20 +29,40 @@ struct TransactionListView: View {
     }
     
     var body: some View {
-        VStack {
-            FilterBarView(viewModel: filterBarViewModel)
-                .frame(height: 48)
-                .background(Color.accentColor.opacity(0.8))
-            List {
-                ForEach(viewModel.transactions) { transaction in
-                    TransactionView(transaction: transaction)
+        ZStack {
+            VStack {
+                FilterBarView(viewModel: filterBarViewModel)
+                    .frame(height: 48)
+                    .background(Color.accentColor.opacity(0.8))
+                List {
+                    ForEach(viewModel.transactions) { transaction in
+                        TransactionView(transaction: transaction)
+                    }
+                    Spacer()
+                        .frame(height: 80)
                 }
+                .animation(.easeIn)
+                .listStyle(PlainListStyle())
+                .navigationBarTitleDisplayMode(.inline)
+                .navigationTitle("Transactions")
             }
-            .animation(.easeIn)
-            .listStyle(PlainListStyle())
-            .navigationBarTitleDisplayMode(.inline)
-            .navigationTitle("Transactions")
+            VStack {
+                Spacer()
+                floatingView()
+            }
         }
+    }
+    
+    func floatingView() -> FloatingSumView {
+        let totalSpent: Double = self.viewModel.transactions
+            .map({ $0.amount})
+            .reduce(0, +)
+        
+        let floatingViewModel = FloatingSumViewModel(
+            category: viewModel.transactionFilter.category.category,
+            totalSpent: totalSpent)
+        
+        return FloatingSumView(viewModel: floatingViewModel)
     }
 }
 
