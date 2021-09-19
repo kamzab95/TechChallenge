@@ -10,11 +10,15 @@ import SwiftUI
 class TransactionViewModel: ObservableObject {
     @Published var transaction: TransactionModel
     @Published var pinned: Bool
-    @Published var action : () -> Void = {}
+    @Published var pinAction: ((Bool) -> Void)?
     
     init(transaction: TransactionModel, pinned: Bool) {
         self._transaction = .init(initialValue: transaction)
         self._pinned = .init(initialValue: pinned)
+    }
+    
+    func togglePin() {
+        pinAction?(!pinned)
     }
 }
 
@@ -68,7 +72,7 @@ struct TransactionView: View {
         .clipShape(RoundedRectangle(cornerRadius: 8.0))
         .onTapGesture {
             withAnimation {
-                viewModel.action()
+                viewModel.togglePin()
             }
         }
     }

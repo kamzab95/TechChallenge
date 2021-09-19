@@ -12,10 +12,21 @@ class FloatingSumViewModel: ObservableObject {
     @Published var category: TransactionModel.Category? = nil
     @Published var totalSpent: Double
     
-    init(category: TransactionModel.Category?, totalSpent: Double) {
+    private let transactionService: TransactionsService = TransactionsServiceImpl.shared
+    
+    let cancelBag = CancelBag()
+    
+    init(category: TransactionModel.Category?) {
         _category = .init(initialValue: category)
-        _totalSpent = .init(initialValue: totalSpent)
+        _totalSpent = .init(initialValue: 0)
+        
+        reload()
     }
+    
+    func reload() {
+        transactionService.loadTotalSum(sum: keyBind(\.totalSpent), category: category, includeUnpined: false)
+    }
+    
 }
 
 struct FloatingSumView: View {
@@ -46,6 +57,13 @@ struct FloatingSumView: View {
 
 struct FloatingSumView_Previews: PreviewProvider {
     static var previews: some View {
-        FloatingSumView(viewModel: FloatingSumViewModel(category: .entertainment, totalSpent: 1233.45))
+        FloatingSumView(viewModel: FloatingSumViewModel(category: .entertainment))
+    }
+}
+
+
+extension Binding {
+    init(_ defaultValue: Value) {
+        self.init(get: { defaultValue }, set: { _ in })
     }
 }

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct TransactionListView: View {
-    @ObservedObject var viewModel: TransactionListViewModel = TransactionListViewModel(sourceTransactions: ModelData.sampleTransactions)
+    @ObservedObject var viewModel: TransactionListViewModel = TransactionListViewModel()
     
     var filterBarViewModel: FilterBarViewModel<FilterCategoryImpl> {
         let selected: Binding<FilterCategoryImpl> = $viewModel.transactionFilter.category.onSet({ _ in
@@ -58,21 +58,20 @@ struct TransactionListView: View {
             transaction: transaction,
             pinned: viewModel.pinned.contains(transaction.id))
         
-        viewModel.action = {
-            self.viewModel.pinned.insert(transaction.id)
+        viewModel.pinAction = { pinned in
+            if pinned {
+                self.viewModel.pin(id: transaction.id)
+            } else {
+                self.viewModel.unPin(id: transaction.id)
+            }
         }
         
         return TransactionView(viewModel: viewModel)
     }
     
     func floatingView() -> FloatingSumView {
-        let totalSpent: Double = self.viewModel.transactions
-            .map({ $0.amount})
-            .reduce(0, +)
-
         let floatingViewModel = FloatingSumViewModel(
-            category: viewModel.transactionFilter.category.category,
-            totalSpent: totalSpent)
+            category: viewModel.transactionFilter.category.category)
 
         return FloatingSumView(viewModel: floatingViewModel)
     }

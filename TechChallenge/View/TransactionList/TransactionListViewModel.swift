@@ -30,21 +30,26 @@ class TransactionListViewModel: ObservableObject {
     
     @Published var transactions: [TransactionModel]
     @Published var transactionFilter: TransactionFilter = TransactionFilter()
-    @Published var pinned: Set<TransactionModel.ID> = Set()
+    @Published private(set) var pinned: Set<TransactionModel.ID> = Set()
     
-    private let sourceTransactions: [TransactionModel]
+    private let transactionService: TransactionsService = TransactionsServiceImpl.shared
     
-    init(sourceTransactions: [TransactionModel]) {
-        self.sourceTransactions = sourceTransactions
-        self._transactions = .init(initialValue: sourceTransactions)
+    init() {
+        self._transactions = .init(initialValue: [])
+        
+        reload()
     }
     
     func reload() {
-        var transactions = self.sourceTransactions
-        if let categoryFilter = transactionFilter.category.category {
-            transactions = transactions.filter({ $0.category == categoryFilter })
-        }
-        
-        self.transactions = transactions
+        transactionService.loadTransactions(transactions: keyBind(\.transactions), filter: transactionFilter.category.category)
+        transactionService.loadPinned(ids: keyBind(\.pinned))
+    }
+    
+    func pin(id: TransactionModel.ID) {
+        transactionService.addUnpinned(id: id)
+    }
+    
+    func unPin(id: TransactionModel.ID) {
+        transactionService.removeUnpinned(id: id)
     }
 }

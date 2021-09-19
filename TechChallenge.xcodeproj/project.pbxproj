@@ -30,6 +30,10 @@
 		8E829E6026F50ABD000B48DD /* TransactionListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E829E5F26F50ABD000B48DD /* TransactionListViewModel.swift */; };
 		8E829E6626F50C2C000B48DD /* FilterBarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E829E6526F50C2C000B48DD /* FilterBarTests.swift */; };
 		8E829E6926F51302000B48DD /* FloatingSumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E829E6826F51302000B48DD /* FloatingSumView.swift */; };
+		8E829E6C26F52B36000B48DD /* TransactionsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E829E6B26F52B36000B48DD /* TransactionsService.swift */; };
+		8E829E6E26F5FF49000B48DD /* ObservableObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E829E6D26F5FF49000B48DD /* ObservableObject.swift */; };
+		8E829E7326F60301000B48DD /* CancelBag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E829E7226F60301000B48DD /* CancelBag.swift */; };
+		8E829E7626F60321000B48DD /* AnyCancellable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E829E7526F60321000B48DD /* AnyCancellable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +74,10 @@
 		8E829E5F26F50ABD000B48DD /* TransactionListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListViewModel.swift; sourceTree = "<group>"; };
 		8E829E6526F50C2C000B48DD /* FilterBarTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterBarTests.swift; sourceTree = "<group>"; };
 		8E829E6826F51302000B48DD /* FloatingSumView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingSumView.swift; sourceTree = "<group>"; };
+		8E829E6B26F52B36000B48DD /* TransactionsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsService.swift; sourceTree = "<group>"; };
+		8E829E6D26F5FF49000B48DD /* ObservableObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservableObject.swift; sourceTree = "<group>"; };
+		8E829E7226F60301000B48DD /* CancelBag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelBag.swift; sourceTree = "<group>"; };
+		8E829E7526F60321000B48DD /* AnyCancellable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyCancellable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +129,7 @@
 		3CE2268226B007D200B3D085 /* TechChallenge */ = {
 			isa = PBXGroup;
 			children = (
+				8E829E7126F602F2000B48DD /* Utilities */,
 				3C3FCAAE26C57C650092AB11 /* README.md */,
 				3CE226C926B2E43000B3D085 /* View */,
 				3CE226CA26B2E43B00B3D085 /* Model */,
@@ -152,6 +161,7 @@
 		3CE226C926B2E43000B3D085 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				8E829E6A26F52B1D000B48DD /* Services */,
 				8E829E6726F512E9000B48DD /* FloatingSumView */,
 				3CE2268326B007D200B3D085 /* TechChallengeApp.swift */,
 				8E829E5A26F50820000B48DD /* FilterBar */,
@@ -198,6 +208,8 @@
 				3CE01C6326B2EBDE0091B7BA /* Color.swift */,
 				3C296ECE26B31193006DF667 /* Angle.swift */,
 				3C296ED026B404A5006DF667 /* Path.swift */,
+				8E829E6D26F5FF49000B48DD /* ObservableObject.swift */,
+				8E829E7526F60321000B48DD /* AnyCancellable.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -225,6 +237,22 @@
 				8E829E6826F51302000B48DD /* FloatingSumView.swift */,
 			);
 			path = FloatingSumView;
+			sourceTree = "<group>";
+		};
+		8E829E6A26F52B1D000B48DD /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				8E829E6B26F52B36000B48DD /* TransactionsService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		8E829E7126F602F2000B48DD /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				8E829E7226F60301000B48DD /* CancelBag.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -340,8 +368,12 @@
 				3CE226C126B062BA00B3D085 /* Double.swift in Sources */,
 				3CE226AF26B03CBA00B3D085 /* TransactionModel.swift in Sources */,
 				3CE01C6426B2EBDE0091B7BA /* Color.swift in Sources */,
+				8E829E7626F60321000B48DD /* AnyCancellable.swift in Sources */,
+				8E829E6C26F52B36000B48DD /* TransactionsService.swift in Sources */,
+				8E829E6E26F5FF49000B48DD /* ObservableObject.swift in Sources */,
 				8E829E5E26F50820000B48DD /* FilterBarView.swift in Sources */,
 				3CE226BB26B0573C00B3D085 /* Date.swift in Sources */,
+				8E829E7326F60301000B48DD /* CancelBag.swift in Sources */,
 				3CE226C726B2E41E00B3D085 /* InsightsView.swift in Sources */,
 				3CE226BF26B05EB100B3D085 /* ViewModifiers.swift in Sources */,
 				8E829E6926F51302000B48DD /* FloatingSumView.swift in Sources */,
