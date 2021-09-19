@@ -10,24 +10,20 @@ import SwiftUI
 fileprivate typealias Category = TransactionModel.Category
 
 struct RingView: View {
-    let transactions: [TransactionModel]
+    @ObservedObject var viewModel = RingViewModel()
     
     private func ratio(for categoryIndex: Int) -> Double {
-        // TODO: calculate ratio for each category according to cummulative expense
-        
-        // Returning sample value
-        0.2
+        return viewModel.transactionsRatio[categoryIndex].ratio
     }
     
     private func offset(for categoryIndex: Int) -> Double {
-        // TODO: calculate offset for each category according to cummulative expense
-        
-        // Returning sample value
-        Double(categoryIndex) * 0.2
+        let prefix = viewModel.transactionsRatio.prefix(categoryIndex)
+        let offset = prefix.map({ $0.ratio }).reduce(0, +)
+        return offset
     }
 
     private func gradient(for categoryIndex: Int) -> AngularGradient {
-        let color = Category[categoryIndex]?.color ?? .black
+        let color = viewModel.transactionsRatio[categoryIndex].category.color
         return AngularGradient(
             gradient: Gradient(colors: [color.unsaturated, color]),
             center: .center,
@@ -43,12 +39,16 @@ struct RingView: View {
     }
     
     private func percentageText(for categoryIndex: Int) -> String {
-        "\((ratio(for: categoryIndex) * 100).formatted(hasDecimals: false))%"
+        let ratio = ratio(for: categoryIndex)
+        guard ratio > 0 else {
+            return ""
+        }
+        return "\((ratio * 100).formatted(hasDecimals: false))%"
     }
     
     var body: some View {
         ZStack {
-            ForEach(Category.allCases.indices) { categoryIndex in
+            ForEach(viewModel.transactionsRatio.indices) { categoryIndex in
                 PartialCircleShape(
                     offset: offset(for: categoryIndex),
                     ratio: ratio(for: categoryIndex)
@@ -129,7 +129,7 @@ struct RingView_Previews: PreviewProvider {
             sampleRing
                 .scaledToFit()
             
-            RingView(transactions: ModelData.sampleTransactions)
+            RingView()
                 .scaledToFit()
         }
         .padding()

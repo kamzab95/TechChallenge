@@ -14,7 +14,7 @@ struct InsightsView: View {
     
     var body: some View {
         List {
-            RingView(transactions: transactions)
+            RingView()
                 .scaledToFit()
             
             ForEach(viewModel.totalForCategory) { info in

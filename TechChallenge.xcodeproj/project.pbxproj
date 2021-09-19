@@ -36,6 +36,7 @@
 		8E829E7626F60321000B48DD /* AnyCancellable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E829E7526F60321000B48DD /* AnyCancellable.swift */; };
 		8E829E7A26F76EF7000B48DD /* Binding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E829E7926F76EF7000B48DD /* Binding.swift */; };
 		8E829E7C26F78163000B48DD /* InsightsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E829E7B26F78163000B48DD /* InsightsViewModel.swift */; };
+		8E829E7F26F78B0B000B48DD /* RingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E829E7E26F78B0B000B48DD /* RingViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +83,7 @@
 		8E829E7526F60321000B48DD /* AnyCancellable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyCancellable.swift; sourceTree = "<group>"; };
 		8E829E7926F76EF7000B48DD /* Binding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Binding.swift; sourceTree = "<group>"; };
 		8E829E7B26F78163000B48DD /* InsightsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsightsViewModel.swift; sourceTree = "<group>"; };
+		8E829E7E26F78B0B000B48DD /* RingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,8 +193,9 @@
 			isa = PBXGroup;
 			children = (
 				3CE226C626B2E41E00B3D085 /* InsightsView.swift */,
-				3CE01C6126B2E59C0091B7BA /* RingView.swift */,
 				8E829E7B26F78163000B48DD /* InsightsViewModel.swift */,
+				3CE01C6126B2E59C0091B7BA /* RingView.swift */,
+				8E829E7E26F78B0B000B48DD /* RingViewModel.swift */,
 			);
 			path = Insights;
 			sourceTree = "<group>";
@@ -373,6 +376,7 @@
 				3CE01C6226B2E59C0091B7BA /* RingView.swift in Sources */,
 				3CE226C126B062BA00B3D085 /* Double.swift in Sources */,
 				3CE226AF26B03CBA00B3D085 /* TransactionModel.swift in Sources */,
+				8E829E7F26F78B0B000B48DD /* RingViewModel.swift in Sources */,
 				3CE01C6426B2EBDE0091B7BA /* Color.swift in Sources */,
 				8E829E7626F60321000B48DD /* AnyCancellable.swift in Sources */,
 				8E829E6C26F52B36000B48DD /* TransactionsService.swift in Sources */,

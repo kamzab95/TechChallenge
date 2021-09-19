@@ -14,6 +14,7 @@ protocol TransactionsService {
     func loadPinned(ids: Binding<Set<TransactionModel.ID>>)
     func loadTotalSum(sum: Binding<Double>, category: TransactionModel.Category?, includeUnpined: Bool)
     func loadTotalForEachCategory(sum: Binding<[TransactionCategory]>, includeUnpined: Bool)
+    func loadTrasnactionsRatio(ratio: Binding<[TransactionRatio]>, includeUnpined: Bool)
     
     func addUnpinned(id: TransactionModel.ID)
     func removeUnpinned(id: TransactionModel.ID)
@@ -80,6 +81,32 @@ class TransactionsServiceImpl: TransactionsService {
     }
     
     func loadTotalForEachCategory(sum: Binding<[TransactionCategory]>, includeUnpined: Bool) {
+        observeCategoriesSum(includeUnpined: includeUnpined)
+            .sink { totalSum in
+                sum.wrappedValue = totalSum
+            }
+            .cancel(with: cancelBag)
+    }
+    
+    func loadTrasnactionsRatio(ratio: Binding<[TransactionRatio]>, includeUnpined: Bool) {
+        observeCategoriesSum(includeUnpined: includeUnpined)
+            .map({ categoriesSum -> [TransactionRatio] in
+                let total = categoriesSum.map({ $0.totalSum }).reduce(0, +)
+                
+                let ratioList: [TransactionRatio] = categoriesSum.map({ categorySum in
+                    let ratio = categorySum.totalSum / total
+                    return TransactionRatio(category: categorySum.category, ratio: ratio)
+                })
+                
+                return ratioList
+            })
+            .sink { ratioList in
+                ratio.wrappedValue = ratioList
+            }
+            .cancel(with: cancelBag)
+    }
+    
+    private func observeCategoriesSum(includeUnpined: Bool) -> AnyPublisher<[TransactionCategory], Never> {
         Publishers.CombineLatest($transactionsSource, $unpinnedSource)
             .map({ transactions, unpinned -> [TransactionCategory] in
                 var transactionsCategorySum = TransactionModel.Category.allCases.reduce(into: [TransactionModel.Category : Double](), { $0[$1] = 0 })
@@ -94,12 +121,11 @@ class TransactionsServiceImpl: TransactionsService {
                     transactionsCategorySum[transaction.category] = currentValue + transaction.amount
                 }
                 
-                return transactionsCategorySum.map({ TransactionCategory(category: $0.key, totalSum: $0.value) })
+                return transactionsCategorySum
+                    .map({ TransactionCategory(category: $0.key, totalSum: $0.value) })
+                    .sorted(by: { $0.category.index < $1.category.index })
             })
-            .sink { totalSum in
-                sum.wrappedValue = totalSum
-            }
-            .cancel(with: cancelBag)
+            .eraseToAnyPublisher()
     }
     
     private static func filterByCategory(transactions: [TransactionModel], category: TransactionModel.Category?) -> [TransactionModel] {

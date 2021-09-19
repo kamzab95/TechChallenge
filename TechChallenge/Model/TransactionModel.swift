@@ -50,6 +50,10 @@ extension TransactionModel.Category: Identifiable {
     var id: String {
         rawValue
     }
+    
+    var index: Int {
+        TransactionModel.Category.allCases.firstIndex(of: self) ?? 0
+    }
 }
 
 extension TransactionModel.Category {
