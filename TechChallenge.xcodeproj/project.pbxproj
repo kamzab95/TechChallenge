@@ -34,6 +34,8 @@
 		8E829E6E26F5FF49000B48DD /* ObservableObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E829E6D26F5FF49000B48DD /* ObservableObject.swift */; };
 		8E829E7326F60301000B48DD /* CancelBag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E829E7226F60301000B48DD /* CancelBag.swift */; };
 		8E829E7626F60321000B48DD /* AnyCancellable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E829E7526F60321000B48DD /* AnyCancellable.swift */; };
+		8E829E7A26F76EF7000B48DD /* Binding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E829E7926F76EF7000B48DD /* Binding.swift */; };
+		8E829E7C26F78163000B48DD /* InsightsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E829E7B26F78163000B48DD /* InsightsViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +80,8 @@
 		8E829E6D26F5FF49000B48DD /* ObservableObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservableObject.swift; sourceTree = "<group>"; };
 		8E829E7226F60301000B48DD /* CancelBag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelBag.swift; sourceTree = "<group>"; };
 		8E829E7526F60321000B48DD /* AnyCancellable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyCancellable.swift; sourceTree = "<group>"; };
+		8E829E7926F76EF7000B48DD /* Binding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Binding.swift; sourceTree = "<group>"; };
+		8E829E7B26F78163000B48DD /* InsightsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsightsViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,6 +192,7 @@
 			children = (
 				3CE226C626B2E41E00B3D085 /* InsightsView.swift */,
 				3CE01C6126B2E59C0091B7BA /* RingView.swift */,
+				8E829E7B26F78163000B48DD /* InsightsViewModel.swift */,
 			);
 			path = Insights;
 			sourceTree = "<group>";
@@ -210,6 +215,7 @@
 				3C296ED026B404A5006DF667 /* Path.swift */,
 				8E829E6D26F5FF49000B48DD /* ObservableObject.swift */,
 				8E829E7526F60321000B48DD /* AnyCancellable.swift */,
+				8E829E7926F76EF7000B48DD /* Binding.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -371,11 +377,13 @@
 				8E829E7626F60321000B48DD /* AnyCancellable.swift in Sources */,
 				8E829E6C26F52B36000B48DD /* TransactionsService.swift in Sources */,
 				8E829E6E26F5FF49000B48DD /* ObservableObject.swift in Sources */,
+				8E829E7C26F78163000B48DD /* InsightsViewModel.swift in Sources */,
 				8E829E5E26F50820000B48DD /* FilterBarView.swift in Sources */,
 				3CE226BB26B0573C00B3D085 /* Date.swift in Sources */,
 				8E829E7326F60301000B48DD /* CancelBag.swift in Sources */,
 				3CE226C726B2E41E00B3D085 /* InsightsView.swift in Sources */,
 				3CE226BF26B05EB100B3D085 /* ViewModifiers.swift in Sources */,
+				8E829E7A26F76EF7000B48DD /* Binding.swift in Sources */,
 				8E829E6926F51302000B48DD /* FloatingSumView.swift in Sources */,
 				3C296ECF26B31193006DF667 /* Angle.swift in Sources */,
 				3C3FCAAD26C57A7D0092AB11 /* TransactionModel+UI.swift in Sources */,
