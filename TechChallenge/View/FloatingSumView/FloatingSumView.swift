@@ -14,20 +14,25 @@ struct FloatingSumView: View {
     
     var body: some View {
         ZStack {
-            RoundedRectangle(cornerRadius: 10)
-                .stroke(Color.black, lineWidth: 2)
+            RoundedRectangle(cornerRadius: 8)
+                .stroke(Color.accentColor, lineWidth: 2)
                 .background(Color.white)
             VStack(alignment: .center) {
                 Text(viewModel.category?.rawValue ?? "all")
+                    .font(.headline)
                     .foregroundColor(viewModel.category?.color ?? Color.black)
                     .frame(maxWidth: .infinity, alignment: .trailing)
                 HStack {
                     Text("Total spent:")
+                        .fontWeight(.regular)
+                        .secondary()
                         .frame(maxWidth: .infinity, alignment: .leading)
                     Text("$"+viewModel.totalSpent.formatted())
+                        .bold()
+                        .secondary()
                         .frame(maxWidth: .infinity, alignment: .trailing)
                 }
-            }.padding(8)
+            }.padding(12)
         }
         .frame(height: 70)
         .padding(10)
