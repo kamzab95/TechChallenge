@@ -38,7 +38,7 @@ struct FilterBarView<T: FilterCategory>: View {
                     }
                 }
                 Spacer()
-            }
+            }.frame(height: 60)
         }
     }
 }

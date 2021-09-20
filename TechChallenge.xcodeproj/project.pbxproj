@@ -11,7 +11,6 @@
 		3C296ED126B404A5006DF667 /* Path.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C296ED026B404A5006DF667 /* Path.swift */; };
 		3C296F0E26B455F1006DF667 /* TechChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C296F0D26B455F1006DF667 /* TechChallengeTests.swift */; };
 		3C3FCAAD26C57A7D0092AB11 /* TransactionModel+UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3FCAAC26C57A7D0092AB11 /* TransactionModel+UI.swift */; };
-		3C3FCAAF26C57C650092AB11 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 3C3FCAAE26C57C650092AB11 /* README.md */; };
 		3CE01C6226B2E59C0091B7BA /* RingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE01C6126B2E59C0091B7BA /* RingView.swift */; };
 		3CE01C6426B2EBDE0091B7BA /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE01C6326B2EBDE0091B7BA /* Color.swift */; };
 		3CE2268426B007D200B3D085 /* TechChallengeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE2268326B007D200B3D085 /* TechChallengeApp.swift */; };
@@ -63,7 +62,6 @@
 		3C296F0B26B455F1006DF667 /* TechChallengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TechChallengeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C296F0D26B455F1006DF667 /* TechChallengeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TechChallengeTests.swift; sourceTree = "<group>"; };
 		3C3FCAAC26C57A7D0092AB11 /* TransactionModel+UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TransactionModel+UI.swift"; sourceTree = "<group>"; };
-		3C3FCAAE26C57C650092AB11 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		3CE01C6126B2E59C0091B7BA /* RingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingView.swift; sourceTree = "<group>"; };
 		3CE01C6326B2EBDE0091B7BA /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		3CE2268026B007D200B3D085 /* TechChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TechChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -149,7 +147,6 @@
 		3CE2268226B007D200B3D085 /* TechChallenge */ = {
 			isa = PBXGroup;
 			children = (
-				3C3FCAAE26C57C650092AB11 /* README.md */,
 				8E829E8026F84449000B48DD /* App */,
 				8E829E8726F84526000B48DD /* DataStores */,
 				8E829E6A26F52B1D000B48DD /* Services */,
@@ -396,7 +393,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3C3FCAAF26C57C650092AB11 /* README.md in Resources */,
 				3CE2268B26B007D300B3D085 /* Preview Assets.xcassets in Resources */,
 				3CE2268826B007D300B3D085 /* Assets.xcassets in Resources */,
 			);

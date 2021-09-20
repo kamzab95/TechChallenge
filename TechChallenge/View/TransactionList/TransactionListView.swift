@@ -32,7 +32,7 @@ struct TransactionListView: View {
         ZStack {
             VStack {
                 FilterBarView(viewModel: filterBarViewModel)
-                    .frame(height: 48)
+                    .frame(height: 80)
                     .background(Color.accentColor.opacity(0.8))
                 List {
                     ForEach(viewModel.transactions) { transaction in
