@@ -34,7 +34,7 @@ struct FloatingSumView: View {
                 }
             }.padding(12)
         }
-        .frame(height: 70)
+        .frame(height: 80)
         .padding(10)
     }
 }
