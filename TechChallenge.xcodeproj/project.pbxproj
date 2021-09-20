@@ -27,7 +27,6 @@
 		8E829E5D26F50820000B48DD /* FilterBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E829E5B26F50820000B48DD /* FilterBarViewModel.swift */; };
 		8E829E5E26F50820000B48DD /* FilterBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E829E5C26F50820000B48DD /* FilterBarView.swift */; };
 		8E829E6026F50ABD000B48DD /* TransactionListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E829E5F26F50ABD000B48DD /* TransactionListViewModel.swift */; };
-		8E829E6626F50C2C000B48DD /* FilterBarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E829E6526F50C2C000B48DD /* FilterBarTests.swift */; };
 		8E829E6926F51302000B48DD /* FloatingSumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E829E6826F51302000B48DD /* FloatingSumView.swift */; };
 		8E829E6C26F52B36000B48DD /* TransactionsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E829E6B26F52B36000B48DD /* TransactionsService.swift */; };
 		8E829E6E26F5FF49000B48DD /* ObservableObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E829E6D26F5FF49000B48DD /* ObservableObject.swift */; };
@@ -43,6 +42,7 @@
 		8E829E8E26F8488C000B48DD /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E829E8D26F8488C000B48DD /* AppEnvironment.swift */; };
 		8E829E9026F84C6E000B48DD /* FloatingSumViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E829E8F26F84C6E000B48DD /* FloatingSumViewModel.swift */; };
 		8E829E9226F84CFC000B48DD /* TransactionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E829E9126F84CFC000B48DD /* TransactionViewModel.swift */; };
+		8E829E9526F850B6000B48DD /* TransactionsServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E829E9426F850B6000B48DD /* TransactionsServiceTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,7 +80,6 @@
 		8E829E5B26F50820000B48DD /* FilterBarViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterBarViewModel.swift; sourceTree = "<group>"; };
 		8E829E5C26F50820000B48DD /* FilterBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterBarView.swift; sourceTree = "<group>"; };
 		8E829E5F26F50ABD000B48DD /* TransactionListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListViewModel.swift; sourceTree = "<group>"; };
-		8E829E6526F50C2C000B48DD /* FilterBarTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterBarTests.swift; sourceTree = "<group>"; };
 		8E829E6826F51302000B48DD /* FloatingSumView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingSumView.swift; sourceTree = "<group>"; };
 		8E829E6B26F52B36000B48DD /* TransactionsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsService.swift; sourceTree = "<group>"; };
 		8E829E6D26F5FF49000B48DD /* ObservableObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservableObject.swift; sourceTree = "<group>"; };
@@ -96,6 +95,7 @@
 		8E829E8D26F8488C000B48DD /* AppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnvironment.swift; sourceTree = "<group>"; };
 		8E829E8F26F84C6E000B48DD /* FloatingSumViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingSumViewModel.swift; sourceTree = "<group>"; };
 		8E829E9126F84CFC000B48DD /* TransactionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionViewModel.swift; sourceTree = "<group>"; };
+		8E829E9426F850B6000B48DD /* TransactionsServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsServiceTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,9 +119,9 @@
 		3C296EDA26B4402A006DF667 /* TechChallengeTests */ = {
 			isa = PBXGroup;
 			children = (
-				8E829E6426F50BF7000B48DD /* FilterBar */,
 				3C296F0D26B455F1006DF667 /* TechChallengeTests.swift */,
 				3C296EDD26B4402A006DF667 /* Info.plist */,
+				8E829E9426F850B6000B48DD /* TransactionsServiceTests.swift */,
 			);
 			path = TechChallengeTests;
 			sourceTree = "<group>";
@@ -241,14 +241,6 @@
 			children = (
 				8E829E5C26F50820000B48DD /* FilterBarView.swift */,
 				8E829E5B26F50820000B48DD /* FilterBarViewModel.swift */,
-			);
-			path = FilterBar;
-			sourceTree = "<group>";
-		};
-		8E829E6426F50BF7000B48DD /* FilterBar */ = {
-			isa = PBXGroup;
-			children = (
-				8E829E6526F50C2C000B48DD /* FilterBarTests.swift */,
 			);
 			path = FilterBar;
 			sourceTree = "<group>";
@@ -405,8 +397,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E829E9526F850B6000B48DD /* TransactionsServiceTests.swift in Sources */,
 				3C296F0E26B455F1006DF667 /* TechChallengeTests.swift in Sources */,
-				8E829E6626F50C2C000B48DD /* FilterBarTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
