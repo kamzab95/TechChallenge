@@ -12,9 +12,13 @@ import SwiftUI
 class InsightsViewModel: ObservableObject {
     @Published var totalForCategory: [TransactionCategory]
     
-    let transactionService: TransactionsService = TransactionsServiceImpl.shared
+    private var transactionService: TransactionsService {
+        container.services.transactionsService
+    }
+    let container: Container
     
-    init() {
+    init(container: Container) {
+        self.container = container
         self._totalForCategory = .init(initialValue: [])
         
         reload()

@@ -7,21 +7,6 @@
 
 import SwiftUI
 
-class TransactionViewModel: ObservableObject {
-    @Published var transaction: TransactionModel
-    @Published var pinned: Bool
-    @Published var pinAction: ((Bool) -> Void)?
-    
-    init(transaction: TransactionModel, pinned: Bool) {
-        self._transaction = .init(initialValue: transaction)
-        self._pinned = .init(initialValue: pinned)
-    }
-    
-    func togglePin() {
-        pinAction?(!pinned)
-    }
-}
-
 struct TransactionView: View {
     @ObservedObject var viewModel: TransactionViewModel
     
@@ -36,9 +21,9 @@ struct TransactionView: View {
                     .font(.headline)
                     .foregroundColor(transaction.category.color)
                 Spacer()
-                Text(viewModel.pinned ? "|" : "O")
+                Image(systemName: viewModel.unpinned ? "pin.slash.fill" : "pin.fill")
             }
-            if !viewModel.pinned {
+            if !viewModel.unpinned {
                 HStack {
                     transaction.image
                         .resizable()
@@ -82,10 +67,10 @@ struct TransactionView: View {
 struct TransactionView_Previews: PreviewProvider {
     static var previews: some View {
         VStack {
-            TransactionView(viewModel: .init(transaction: ModelData.sampleTransactions[0], pinned: false))
-            TransactionView(viewModel: .init(transaction: ModelData.sampleTransactions[1], pinned: false))
-            TransactionView(viewModel: .init(transaction: ModelData.sampleTransactions[0], pinned: true))
-            TransactionView(viewModel: .init(transaction: ModelData.sampleTransactions[1], pinned: true))
+            TransactionView(viewModel: .init(transaction: ModelData.sampleTransactions[0], unpinned: false))
+            TransactionView(viewModel: .init(transaction: ModelData.sampleTransactions[1], unpinned: false))
+            TransactionView(viewModel: .init(transaction: ModelData.sampleTransactions[0], unpinned: true))
+            TransactionView(viewModel: .init(transaction: ModelData.sampleTransactions[1], unpinned: true))
         }
         .padding()
         .previewLayout(.sizeThatFits)

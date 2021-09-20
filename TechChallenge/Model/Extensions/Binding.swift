@@ -22,3 +22,9 @@ extension Binding where Value: Equatable {
         })
     }
 }
+
+extension Binding {
+    init(_ defaultValue: Value) {
+        self.init(get: { defaultValue }, set: { _ in })
+    }
+}

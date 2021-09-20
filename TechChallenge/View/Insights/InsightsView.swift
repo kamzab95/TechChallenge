@@ -10,11 +10,11 @@ import SwiftUI
 struct InsightsView: View {
     let transactions: [TransactionModel] = ModelData.sampleTransactions
     
-    @ObservedObject var viewModel = InsightsViewModel()
+    @ObservedObject var viewModel: InsightsViewModel
     
     var body: some View {
         List {
-            RingView()
+            RingView(viewModel: RingViewModel(container: viewModel.container))
                 .scaledToFit()
             
             ForEach(viewModel.totalForCategory) { info in
@@ -36,8 +36,9 @@ struct InsightsView: View {
 
 #if DEBUG
 struct InsightsView_Previews: PreviewProvider {
+    static let container = AppEnvironment.bootstrap().container
     static var previews: some View {
-        InsightsView()
+        InsightsView(viewModel: InsightsViewModel(container: container))
             .previewLayout(.sizeThatFits)
     }
 }

@@ -37,6 +37,13 @@
 		8E829E7A26F76EF7000B48DD /* Binding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E829E7926F76EF7000B48DD /* Binding.swift */; };
 		8E829E7C26F78163000B48DD /* InsightsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E829E7B26F78163000B48DD /* InsightsViewModel.swift */; };
 		8E829E7F26F78B0B000B48DD /* RingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E829E7E26F78B0B000B48DD /* RingViewModel.swift */; };
+		8E829E8326F8446B000B48DD /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E829E8226F8446B000B48DD /* Container.swift */; };
+		8E829E8626F844DF000B48DD /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E829E8526F844DF000B48DD /* Services.swift */; };
+		8E829E8926F84547000B48DD /* TransactionsDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E829E8826F84547000B48DD /* TransactionsDataStore.swift */; };
+		8E829E8C26F8465C000B48DD /* UnpinnedIDsDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E829E8B26F8465C000B48DD /* UnpinnedIDsDataStore.swift */; };
+		8E829E8E26F8488C000B48DD /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E829E8D26F8488C000B48DD /* AppEnvironment.swift */; };
+		8E829E9026F84C6E000B48DD /* FloatingSumViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E829E8F26F84C6E000B48DD /* FloatingSumViewModel.swift */; };
+		8E829E9226F84CFC000B48DD /* TransactionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E829E9126F84CFC000B48DD /* TransactionViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +91,13 @@
 		8E829E7926F76EF7000B48DD /* Binding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Binding.swift; sourceTree = "<group>"; };
 		8E829E7B26F78163000B48DD /* InsightsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsightsViewModel.swift; sourceTree = "<group>"; };
 		8E829E7E26F78B0B000B48DD /* RingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingViewModel.swift; sourceTree = "<group>"; };
+		8E829E8226F8446B000B48DD /* Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
+		8E829E8526F844DF000B48DD /* Services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
+		8E829E8826F84547000B48DD /* TransactionsDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsDataStore.swift; sourceTree = "<group>"; };
+		8E829E8B26F8465C000B48DD /* UnpinnedIDsDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnpinnedIDsDataStore.swift; sourceTree = "<group>"; };
+		8E829E8D26F8488C000B48DD /* AppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnvironment.swift; sourceTree = "<group>"; };
+		8E829E8F26F84C6E000B48DD /* FloatingSumViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingSumViewModel.swift; sourceTree = "<group>"; };
+		8E829E9126F84CFC000B48DD /* TransactionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,8 +149,11 @@
 		3CE2268226B007D200B3D085 /* TechChallenge */ = {
 			isa = PBXGroup;
 			children = (
-				8E829E7126F602F2000B48DD /* Utilities */,
 				3C3FCAAE26C57C650092AB11 /* README.md */,
+				8E829E8026F84449000B48DD /* App */,
+				8E829E8726F84526000B48DD /* DataStores */,
+				8E829E6A26F52B1D000B48DD /* Services */,
+				8E829E7126F602F2000B48DD /* Utilities */,
 				3CE226C926B2E43000B3D085 /* View */,
 				3CE226CA26B2E43B00B3D085 /* Model */,
 				3CE2268726B007D300B3D085 /* Assets.xcassets */,
@@ -157,7 +174,6 @@
 		3CE226C826B2E42800B3D085 /* TransactionList */ = {
 			isa = PBXGroup;
 			children = (
-				3CE226B826B0548C00B3D085 /* TransactionView.swift */,
 				3CE226B426B0523C00B3D085 /* TransactionListView.swift */,
 				8E829E5F26F50ABD000B48DD /* TransactionListViewModel.swift */,
 			);
@@ -167,11 +183,11 @@
 		3CE226C926B2E43000B3D085 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				8E829E6A26F52B1D000B48DD /* Services */,
-				8E829E6726F512E9000B48DD /* FloatingSumView */,
 				3CE2268326B007D200B3D085 /* TechChallengeApp.swift */,
+				8E829E6726F512E9000B48DD /* FloatingSumView */,
 				8E829E5A26F50820000B48DD /* FilterBar */,
 				3CE226CB26B2E44E00B3D085 /* Insights */,
+				8E829E9326F84D1F000B48DD /* Transaction */,
 				3CE226C826B2E42800B3D085 /* TransactionList */,
 				3CE226CC26B2E47300B3D085 /* Shared */,
 			);
@@ -226,8 +242,8 @@
 		8E829E5A26F50820000B48DD /* FilterBar */ = {
 			isa = PBXGroup;
 			children = (
-				8E829E5B26F50820000B48DD /* FilterBarViewModel.swift */,
 				8E829E5C26F50820000B48DD /* FilterBarView.swift */,
+				8E829E5B26F50820000B48DD /* FilterBarViewModel.swift */,
 			);
 			path = FilterBar;
 			sourceTree = "<group>";
@@ -244,6 +260,7 @@
 			isa = PBXGroup;
 			children = (
 				8E829E6826F51302000B48DD /* FloatingSumView.swift */,
+				8E829E8F26F84C6E000B48DD /* FloatingSumViewModel.swift */,
 			);
 			path = FloatingSumView;
 			sourceTree = "<group>";
@@ -262,6 +279,34 @@
 				8E829E7226F60301000B48DD /* CancelBag.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		8E829E8026F84449000B48DD /* App */ = {
+			isa = PBXGroup;
+			children = (
+				8E829E8226F8446B000B48DD /* Container.swift */,
+				8E829E8526F844DF000B48DD /* Services.swift */,
+				8E829E8D26F8488C000B48DD /* AppEnvironment.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		8E829E8726F84526000B48DD /* DataStores */ = {
+			isa = PBXGroup;
+			children = (
+				8E829E8826F84547000B48DD /* TransactionsDataStore.swift */,
+				8E829E8B26F8465C000B48DD /* UnpinnedIDsDataStore.swift */,
+			);
+			path = DataStores;
+			sourceTree = "<group>";
+		};
+		8E829E9326F84D1F000B48DD /* Transaction */ = {
+			isa = PBXGroup;
+			children = (
+				3CE226B826B0548C00B3D085 /* TransactionView.swift */,
+				8E829E9126F84CFC000B48DD /* TransactionViewModel.swift */,
+			);
+			path = Transaction;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -378,24 +423,31 @@
 				3CE226AF26B03CBA00B3D085 /* TransactionModel.swift in Sources */,
 				8E829E7F26F78B0B000B48DD /* RingViewModel.swift in Sources */,
 				3CE01C6426B2EBDE0091B7BA /* Color.swift in Sources */,
+				8E829E8E26F8488C000B48DD /* AppEnvironment.swift in Sources */,
 				8E829E7626F60321000B48DD /* AnyCancellable.swift in Sources */,
+				8E829E9226F84CFC000B48DD /* TransactionViewModel.swift in Sources */,
 				8E829E6C26F52B36000B48DD /* TransactionsService.swift in Sources */,
 				8E829E6E26F5FF49000B48DD /* ObservableObject.swift in Sources */,
 				8E829E7C26F78163000B48DD /* InsightsViewModel.swift in Sources */,
+				8E829E9026F84C6E000B48DD /* FloatingSumViewModel.swift in Sources */,
 				8E829E5E26F50820000B48DD /* FilterBarView.swift in Sources */,
 				3CE226BB26B0573C00B3D085 /* Date.swift in Sources */,
 				8E829E7326F60301000B48DD /* CancelBag.swift in Sources */,
 				3CE226C726B2E41E00B3D085 /* InsightsView.swift in Sources */,
 				3CE226BF26B05EB100B3D085 /* ViewModifiers.swift in Sources */,
+				8E829E8C26F8465C000B48DD /* UnpinnedIDsDataStore.swift in Sources */,
 				8E829E7A26F76EF7000B48DD /* Binding.swift in Sources */,
 				8E829E6926F51302000B48DD /* FloatingSumView.swift in Sources */,
+				8E829E8626F844DF000B48DD /* Services.swift in Sources */,
 				3C296ECF26B31193006DF667 /* Angle.swift in Sources */,
 				3C3FCAAD26C57A7D0092AB11 /* TransactionModel+UI.swift in Sources */,
 				8E829E6026F50ABD000B48DD /* TransactionListViewModel.swift in Sources */,
 				3CE226B526B0523C00B3D085 /* TransactionListView.swift in Sources */,
 				3CE226B126B03DC600B3D085 /* ModelData.swift in Sources */,
 				3CE2268426B007D200B3D085 /* TechChallengeApp.swift in Sources */,
+				8E829E8926F84547000B48DD /* TransactionsDataStore.swift in Sources */,
 				3C296ED126B404A5006DF667 /* Path.swift in Sources */,
+				8E829E8326F8446B000B48DD /* Container.swift in Sources */,
 				3CE226B926B0548C00B3D085 /* TransactionView.swift in Sources */,
 				8E829E5D26F50820000B48DD /* FilterBarViewModel.swift in Sources */,
 			);

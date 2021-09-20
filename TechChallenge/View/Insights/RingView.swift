@@ -10,7 +10,7 @@ import SwiftUI
 fileprivate typealias Category = TransactionModel.Category
 
 struct RingView: View {
-    @ObservedObject var viewModel = RingViewModel()
+    @ObservedObject var viewModel: RingViewModel
     
     private func ratio(for categoryIndex: Int) -> Double {
         return viewModel.transactionsRatio[categoryIndex].ratio
@@ -124,12 +124,14 @@ struct RingView_Previews: PreviewProvider {
         }
     }
     
+    static let container = AppEnvironment.bootstrap().container
+    
     static var previews: some View {
         VStack {
             sampleRing
                 .scaledToFit()
             
-            RingView()
+            RingView(viewModel: RingViewModel(container: container))
                 .scaledToFit()
         }
         .padding()

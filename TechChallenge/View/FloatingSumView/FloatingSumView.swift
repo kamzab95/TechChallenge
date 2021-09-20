@@ -8,27 +8,6 @@
 import SwiftUI
 import Combine
 
-class FloatingSumViewModel: ObservableObject {
-    @Published var category: TransactionModel.Category? = nil
-    @Published var totalSpent: Double
-    
-    private let transactionService: TransactionsService = TransactionsServiceImpl.shared
-    
-    let cancelBag = CancelBag()
-    
-    init(category: TransactionModel.Category?) {
-        _category = .init(initialValue: category)
-        _totalSpent = .init(initialValue: 0)
-        
-        reload()
-    }
-    
-    func reload() {
-        transactionService.loadTotalSum(sum: keyBind(\.totalSpent), category: category, includeUnpined: false)
-    }
-    
-}
-
 struct FloatingSumView: View {
     
     @ObservedObject var viewModel: FloatingSumViewModel
@@ -55,15 +34,11 @@ struct FloatingSumView: View {
     }
 }
 
+#if DEBUG
 struct FloatingSumView_Previews: PreviewProvider {
+    static let container = AppEnvironment.bootstrap().container
     static var previews: some View {
-        FloatingSumView(viewModel: FloatingSumViewModel(category: .entertainment))
+        FloatingSumView(viewModel: FloatingSumViewModel(container: container, category: .entertainment))
     }
 }
-
-
-extension Binding {
-    init(_ defaultValue: Value) {
-        self.init(get: { defaultValue }, set: { _ in })
-    }
-}
+#endif

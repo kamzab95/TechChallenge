@@ -43,6 +43,7 @@ struct FilterBarView<T: FilterCategory>: View {
     }
 }
 
+#if DEBUG
 struct FilterBarView_Previews: PreviewProvider {
     
     static let categories: [TransactionModel.Category] = TransactionModel.Category.allCases
@@ -72,9 +73,4 @@ struct FilterBarView_Previews: PreviewProvider {
         }
     }
 }
-
-extension TransactionModel.Category: FilterCategory {
-    var name: String {
-        self.rawValue
-    }
-}
+#endif

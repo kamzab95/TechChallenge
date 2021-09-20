@@ -18,15 +18,20 @@ class RingViewModel: ObservableObject {
     
     @Published var transactionsRatio: [TransactionRatio]
     
-    private let transactionService: TransactionsService = TransactionsServiceImpl.shared
+    private var transactionService: TransactionsService {
+        container.services.transactionsService
+    }
     
-    init() {
+    let container: Container
+    
+    init(container: Container) {
+        self.container = container
         self._transactionsRatio = .init(wrappedValue: [])
         
         self.reload()
     }
     
     func reload() {
-        transactionService.loadTrasnactionsRatio(ratio: keyBind(\.transactionsRatio), includeUnpined: false)
+        transactionService.loadTransactionsRatio(ratio: keyBind(\.transactionsRatio), includeUnpined: false)
     }
 }

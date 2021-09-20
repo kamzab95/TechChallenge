@@ -9,19 +9,21 @@ import SwiftUI
 
 @main
 struct TechChallengeApp: App {
+    
+    let environment = AppEnvironment.bootstrap()
 
     var body: some Scene {
         WindowGroup {
             TabView {
                 NavigationView {
-                    TransactionListView()
+                    TransactionListView(viewModel: TransactionListViewModel(container: environment.container))
                 }
                 .tabItem {
                     Label("Transactions", systemImage: "list.bullet")
                 }
                 
                 NavigationView {
-                    InsightsView()
+                    InsightsView(viewModel: InsightsViewModel(container: environment.container))
                 }
                 .tabItem {
                     Label("Insights", systemImage: "chart.pie.fill")

@@ -14,7 +14,7 @@ protocol TransactionsService {
     func loadPinned(ids: Binding<Set<TransactionModel.ID>>)
     func loadTotalSum(sum: Binding<Double>, category: TransactionModel.Category?, includeUnpined: Bool)
     func loadTotalForEachCategory(sum: Binding<[TransactionCategory]>, includeUnpined: Bool)
-    func loadTrasnactionsRatio(ratio: Binding<[TransactionRatio]>, includeUnpined: Bool)
+    func loadTransactionsRatio(ratio: Binding<[TransactionRatio]>, includeUnpined: Bool)
     
     func addUnpinned(id: TransactionModel.ID)
     func removeUnpinned(id: TransactionModel.ID)
@@ -22,21 +22,19 @@ protocol TransactionsService {
 
 class TransactionsServiceImpl: TransactionsService {
     
+    private let transactionsDataStore: TransactionsDataStore
+    private let unpinnedIDsDataStore: UnpinnedIDsDataStore
     
-    public static let shared = TransactionsServiceImpl()
+    private let cancelBag = CancelBag()
     
-    @Published var transactionsSource: [TransactionModel]
-    @Published var unpinnedSource = Set<TransactionModel.ID>()
-    
-    let cancelBag = CancelBag()
-    
-    init() {
-        self.transactionsSource = ModelData.sampleTransactions
+    init(transactionsDataStore: TransactionsDataStore, unpinnedIDsDataStore: UnpinnedIDsDataStore) {
+        self.transactionsDataStore = transactionsDataStore
+        self.unpinnedIDsDataStore = unpinnedIDsDataStore
     }
     
     // TRANSACTIONS
     func loadTransactions(transactions: Binding<[TransactionModel]>, filter: TransactionModel.Category?) {
-        $transactionsSource
+        transactionsDataStore.loadAll()
             .sink { items in
                 let filtered = TransactionsServiceImpl.filterByCategory(transactions: items, category: filter)
                 transactions.wrappedValue =  filtered
@@ -46,7 +44,7 @@ class TransactionsServiceImpl: TransactionsService {
     
     // PINNED
     func loadPinned(ids: Binding<Set<TransactionModel.ID>>) {
-        $unpinnedSource
+        unpinnedIDsDataStore.loadAll()
             .sink { items in
                 ids.wrappedValue = items
             }
@@ -54,16 +52,16 @@ class TransactionsServiceImpl: TransactionsService {
     }
     
     func addUnpinned(id: TransactionModel.ID) {
-        unpinnedSource.insert(id)
+        unpinnedIDsDataStore.insert(id: id)
     }
     
     func removeUnpinned(id: TransactionModel.ID) {
-        unpinnedSource.remove(id)
+        unpinnedIDsDataStore.remove(id: id)
     }
     
     // SUM
     func loadTotalSum(sum: Binding<Double>, category: TransactionModel.Category?, includeUnpined: Bool) {
-        Publishers.CombineLatest($transactionsSource, $unpinnedSource)
+        Publishers.CombineLatest(transactionsDataStore.loadAll(), unpinnedIDsDataStore.loadAll())
             .map({ transactions, unpinned -> Double in
                 var transactions = TransactionsServiceImpl.filterByCategory(transactions: transactions, category: category)
                 
@@ -88,7 +86,7 @@ class TransactionsServiceImpl: TransactionsService {
             .cancel(with: cancelBag)
     }
     
-    func loadTrasnactionsRatio(ratio: Binding<[TransactionRatio]>, includeUnpined: Bool) {
+    func loadTransactionsRatio(ratio: Binding<[TransactionRatio]>, includeUnpined: Bool) {
         observeCategoriesSum(includeUnpined: includeUnpined)
             .map({ categoriesSum -> [TransactionRatio] in
                 let total = categoriesSum.map({ $0.totalSum }).reduce(0, +)
@@ -107,7 +105,7 @@ class TransactionsServiceImpl: TransactionsService {
     }
     
     private func observeCategoriesSum(includeUnpined: Bool) -> AnyPublisher<[TransactionCategory], Never> {
-        Publishers.CombineLatest($transactionsSource, $unpinnedSource)
+        Publishers.CombineLatest(transactionsDataStore.loadAll(), unpinnedIDsDataStore.loadAll())
             .map({ transactions, unpinned -> [TransactionCategory] in
                 var transactionsCategorySum = TransactionModel.Category.allCases.reduce(into: [TransactionModel.Category : Double](), { $0[$1] = 0 })
                 

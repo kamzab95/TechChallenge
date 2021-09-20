@@ -32,9 +32,13 @@ class TransactionListViewModel: ObservableObject {
     @Published var transactionFilter: TransactionFilter = TransactionFilter()
     @Published private(set) var pinned: Set<TransactionModel.ID> = Set()
     
-    private let transactionService: TransactionsService = TransactionsServiceImpl.shared
+    private var transactionService: TransactionsService {
+        container.services.transactionsService
+    }
+    let container: Container
     
-    init() {
+    init(container: Container) {
+        self.container = container
         self._transactions = .init(initialValue: [])
         
         reload()
